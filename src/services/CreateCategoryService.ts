@@ -6,19 +6,12 @@ interface IRequest {
     description: string;
 }
 
-/**
- * [] - Definir o tipo de retorno
- * [] - Alterar o retorno de erro
- * [] - Acessar o repositório
- * [] - Retornar algo
- */
-
 class CreateCategoryService {
     constructor(private categoriesRepository: CategoriesRepository) {
 
     }
 
-    execute({ description, name }: IRequest) {
+    execute({ description, name }: IRequest): void {
 
         const categoryAlreadyExists = this.categoriesRepository.findByName(name);
 
