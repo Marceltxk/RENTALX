@@ -1,5 +1,5 @@
 import { Category } from "../model/category";
-import { ICategoriesRepository } from "./ICategoriesRepository";
+import { ICategoriesRepository, ICreateCategoryDTO } from "./ICategoriesRepository";
 
 
 
@@ -14,7 +14,7 @@ class PostgresCategoriesRepository implements ICategoriesRepository {
         return null;
     }
 
-    create(name: string, description: string): void {
+    create({ name, description }: ICreateCategoryDTO): void {
         console.log(name, description);
     }
 }
